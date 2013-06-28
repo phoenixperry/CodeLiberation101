@@ -33,24 +33,26 @@ int main(int argc, const char * argv[])
     
     
     //This will be the same every time this program runs
-    printf("random number that's always the same: %d\n" , rand()%100);
+    printf("random number that's always the same:\n" , rand()%100);
     
     //seed it with the current time
     srand(time(0));
     //random numbers in a range. This will be the different every time a program runs
+    //note that %d is an escape character
     printf("random number %d\n", rand()%100);
     
     //random numbers in a range. This will be the exact every time a program runs
     srand(1);
-    printf("srand seed to 1 will always be: %d\n", rand());
+    printf("srand seed to 1 will always be: ", rand());
     
     //however if we immediately reseed it it will be at the same time as the first value, 0, hence the same
     srand(time(0));
-    printf("another number at the same time as the first value: %d\n", rand()%100);
+    printf("another number at the same time as the first value: \n", rand()%100);
     
     //here's how to get a range from 0 to 5
     for (int nCount=0; nCount <10; ++nCount) {
-        //ok here's easy modulus and how I always think of it. It's an interval counter counting down to 0 by the number after %. Hence, every 5 numbers you get a line break. Oh so much easier than math. :)
+        //ok here's easy modulus and how I always think of it. In this case it's an interval counter counting down to 0 to the number after %. Hence, every 5 numbers you get a line break. Oh so much easier than math. :)
+            //also note /t is a tab escape character
         cout<< rand()%5 << "\t";
         if((nCount+1)%5 ==0)
             cout<< endl;
