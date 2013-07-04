@@ -71,17 +71,43 @@ int main(int argc, const char * argv[])
     
     // we use the dot syntax to access the member function of the string object and find where a word starts
     string myString = "game over";
+    
     int location = myString.find("over");
+    
+    cout << location << " this is the location of the start of over" <<endl;
     if(myString.find("eggplant") == string::npos){
         cout<< "eggplant is not in mySting"<<endl;
     }
     
+
+    string myNewWord = "hey!";
+    
+    myString += "hey";
+  
+    
+    cout << myString << "after adding hey" << endl;
    
     //your first dumb container, an array. It's super stupid in c++ - it doesn't even know how large it is. Really.
     //they are the dumbest arrays you will ever encounter. also their size MUST be a const or a whole number values.
-    int myFirstArray[5] ={22,55,33,2523,10};
+    const int SLOTS 
+    int myFirstArray[5] ={ 22,55,33,2523,10 };
+    //string myFirstStringArray[3] = { "sam", "george" , "fred"};
+    
+    for (int i = 0; i < 5; i++) {
+        cout << myFirstArray[i] << " element in myFirstArray "<< endl;
+    }
+    
+    myFirstArray[0] = 5;
+    
+    for (int i = 0; i < 5; i++) {
+        cout << myFirstArray[i] << " element in myFirstArray "<< endl;
+    }
+    
  
     //here's a multidimentional array. arrays can be made of rows and colums like tables of data. read your book here!
+    
+    
+    
     const int ROWS = 3;
     const int COLUMNS = 3;
     
