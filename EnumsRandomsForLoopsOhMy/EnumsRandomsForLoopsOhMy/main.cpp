@@ -71,17 +71,43 @@ int main(int argc, const char * argv[])
     
     // we use the dot syntax to access the member function of the string object and find where a word starts
     string myString = "game over";
+    
     int location = myString.find("over");
+    
+    cout << location << " this is the location of the start of over" <<endl;
     if(myString.find("eggplant") == string::npos){
         cout<< "eggplant is not in mySting"<<endl;
     }
     
+
+    string myNewWord = "hey!";
+    
+    myString += "hey";
+  
+    
+    cout << myString << "after adding hey" << endl;
    
     //your first dumb container, an array. It's super stupid in c++ - it doesn't even know how large it is. Really.
     //they are the dumbest arrays you will ever encounter. also their size MUST be a const or a whole number values.
-    int myFirstArray[5] ={22,55,33,2523,10};
+    const int SLOTS= 10;
+    int myFirstArray[SLOTS] ={ 22,55,33,2523,10,2,3,4,5,1 };
+    //string myFirstStringArray[3] = { "sam", "george" , "fred"};
+    
+    for (int i = 0; i < SLOTS; i++) {
+        cout << myFirstArray[i] << " element in myFirstArray "<< endl;
+    }
+    
+    myFirstArray[0] = 5;
+    
+    for (int i = 0; i < 5; i++) {
+        cout << myFirstArray[i] << " element in myFirstArray "<< endl;
+    }
+    
  
     //here's a multidimentional array. arrays can be made of rows and colums like tables of data. read your book here!
+    
+    
+    
     const int ROWS = 3;
     const int COLUMNS = 3;
     
@@ -101,13 +127,22 @@ int main(int argc, const char * argv[])
     
     //vectors, oh so much more awesome than arrays. flexible, smart and great. just don't try and add things with []
     vector<string> list;
+    
     list.push_back("axe");
     list.push_back("sword");
     list.push_back("shield");
+
+    list.pop_back();
+
+    vector<string> myStrings(10, "nothing");
+    myStrings.clear();
+    
+    
     
     //iterators - aka your sticky on the object that will allow you to dereference them to get to the object itself.
     //i know... reference types can be deferenced with this little asterisk *. this is where c++ is different that
     //anything else you have ever used. reference types must be memory managed from the stack. primatives are managed from the heap. More on this in the next class.
+    
     vector <string> :: iterator iter;
     
     for(iter = list.begin(); iter!=list.end(); ++iter){
